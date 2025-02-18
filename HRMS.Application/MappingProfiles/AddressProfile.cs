@@ -11,17 +11,17 @@ namespace HRMS.Application.MappingProfiles
         public AddressProfile()
         {
             // Create Address Mapping
-            CreateMap<CreateEmployeeCommand, Address>()
-                .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Street))
-                .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City))
-                .ForMember(dest => dest.State, opt => opt.MapFrom(src => src.State))
-                .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.PostalCode))
-                .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.Country));
+            CreateMap<CreateEmployeeCommand, Domain.Entities.Address>()
+                .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address.Street))
+                .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address.City))
+                .ForMember(dest => dest.State, opt => opt.MapFrom(src => src.Address.State))
+                .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.Address.PostalCode))
+                .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.Address.Country));
 
-            CreateMap<EditEmployeeCommand, Address>()
+            CreateMap<EditEmployeeCommand, Domain.Entities.Address>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore());
 
-            CreateMap<Address, AddressDto>(); // Map Address to AddressDto
+            CreateMap<Domain.Entities.Address, AddressDto>(); // Map Address to AddressDto
         }
     }
 }

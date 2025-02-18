@@ -13,6 +13,10 @@ namespace HRMS.Application.Features.Employees.Commands.Create
         public string Password { get; set; }
 
         // Address properties
+        public Address Address { get; set; }
+    }
+    public class Address
+    {
         public string Street { get; set; }
         public string City { get; set; }
         public string State { get; set; }

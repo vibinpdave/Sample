@@ -28,9 +28,9 @@ namespace HRMS.Application.Features.Employees.Commands.Create
             RuleFor(x => x.Status)
                 .IsInEnum().WithMessage("Status must be a valid value.");
 
-            RuleFor(x => x.City)
+            RuleFor(x => x.Address.City)
                 .NotEmpty().WithMessage("City required.");
-            RuleFor(x => x.State)
+            RuleFor(x => x.Address.State)
                 .NotEmpty().WithMessage("State required.");
         }
     }

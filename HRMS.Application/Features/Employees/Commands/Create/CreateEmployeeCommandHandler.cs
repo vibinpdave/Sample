@@ -27,7 +27,7 @@ namespace HRMS.Application.Features.Employees.Commands.Create
                 throw new BadRequestException(ErrorMessages.Invalid, validationResult);
 
             // Create the address using the AddressRepository
-            var address = _mapper.Map<Address>(request);
+            var address = _mapper.Map<Domain.Entities.Address>(request);
             await _addressRepository.CreateAsync(address);
 
             // Now create the employee and associate it with the newly created address
